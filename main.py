@@ -1,6 +1,11 @@
 # main.py
+import logging
 from fastapi import FastAPI, HTTPException
 from rca import analyze_thread, generate_pdf, fetch_thread_messages, Thread, Message
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 

@@ -13,7 +13,7 @@ class PDF(FPDF):
 
     def chapter_body(self, body):
         self.set_font('Arial', '', 12)
-        self.multi_cell(0, 10, body)
+        self.multi_cell(0, 10, body.encode('latin-1', 'replace').decode('latin-1'))  # Ensure UTF-8 to Latin-1 conversion
         self.ln()
 
 def generate_pdf(summary, filename):

@@ -1,7 +1,8 @@
 # main.py
 import logging
 from fastapi import FastAPI, HTTPException
-from rca import analyze_thread, generate_pdf, fetch_thread_messages, Thread, Message
+from fastapi.responses import FileResponse
+from rca import analyze_thread, convert_to_template, generate_pdf, fetch_thread_messages, Thread, Message
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -19,13 +20,15 @@ async def analyze_thread_endpoint(thread: Thread):
         if not messages:
             raise HTTPException(status_code=404, detail="Thread not found or empty")
 
-    summary = analyze_thread(messages)
+    raw = analyze_thread(messages)
+    converted = convert_to_template(raw)
     filename = 'RCA_Summary.pdf'
-    generate_pdf(summary, filename)
+    generate_pdf(converted, raw, thread, filename)
 
     # For demonstration, let's pretend we're uploading it
-    # In actual implementation, handle file upload to Slack or elsewhere
-    return {"summary": summary, "filename": filename}
+    # In actual implementation, handle file upload to Slack via FileResponse
+    # return FileResponse(filename)
+    return {"raw": raw, "converted": converted, "filename": filename}
 
 if __name__ == "__main__":
     import uvicorn
@@ -52,6 +55,3 @@ if __name__ == "__main__":
     response = client.post("/analyze-thread/", json=mock_thread.model_dump())
     assert response.status_code == 200
     print(response.json())
-
-    # Run the FastAPI app
-    uvicorn.run(app, host="0.0.0.0", port=8000)

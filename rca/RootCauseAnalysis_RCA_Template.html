@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Root Cause Analysis (RCA) Template</title>
+</head>
+<body>
+<h1>Root Cause Analysis (RCA) Template</h1>
+<h2>Incident Summary</h2>
+<p>&lt;Briefly describe the incident, including what happened, when it happened, and the immediate impact.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Incident: Server downtime</li>
+    <li>Date: May 20, 2024</li>
+    <li>Impact: The main website was unavailable for 2 hours, affecting customer access and transactions.</li>
+</ul>
+<h2>Background Information</h2>
+<p>&lt;Provide context about the situation, including relevant history, system configurations, and any prior issues.&gt;</p>
+<p>Example:</p>
+<p>The server has been experiencing intermittent slowdowns over the past month. Maintenance was scheduled, but the downtime occurred before it could be performed.</p>
+<h2>Timeline of Events</h2>
+<p>&lt;Outline the sequence of events leading up to the incident, during the incident, and the initial response actions.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>08:00 AM: Server monitoring system reported high CPU usage.</li>
+    <li>08:15 AM: IT team notified of potential issue.</li>
+    <li>09:00 AM: Server crashed, and the website went down.</li>
+    <li>09:10 AM: IT team began troubleshooting.</li>
+    <li>10:30 AM: Issue identified as a memory leak in the application.</li>
+    <li>10:45 AM: Server rebooted and application patched.</li>
+    <li>11:00 AM: Website back online.</li>
+</ul>
+<h2>Root Cause</h2>
+<p>&lt;Identify the primary cause(s) of the incident. Use the &quot;5 Whys&quot; technique or Fishbone Diagram to drill down to the root cause.&gt;</p>
+<p>Example:</p>
+<p>Root Cause: The memory leak was due to a recent update that was not thoroughly tested.</p>
+<h2>Contributing Factors</h2>
+<p>&lt;List any additional factors that contributed to the incident but were not the primary cause.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Inadequate testing procedures for updates.</li>
+    <li>Lack of real-time monitoring alerts.</li>
+    <li>Insufficient server capacity to handle unexpected loads.</li>
+</ul>
+<h2>Immediate Actions Taken</h2>
+<p>&lt;Describe the actions taken to mitigate the incident and restore normal operations.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Rebooted the server.</li>
+    <li>Applied a temporary patch to fix the memory leak.</li>
+    <li>Increased server monitoring to prevent future occurrences.</li>
+</ul>
+<h2>Preventive Measures</h2>
+<p>&lt;Outline the steps that will be taken to prevent similar incidents in the future.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Implement a more rigorous testing protocol for updates.</li>
+    <li>Set up real-time alerts for server performance issues.</li>
+    <li>Schedule regular maintenance to check for potential problems.</li>
+</ul>
+<h2>Lessons Learned</h2>
+<p>&lt;Summarize the key takeaways from the incident and the RCA process.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Importance of thorough testing before deploying updates.</li>
+    <li>Need for better real-time monitoring systems.</li>
+    <li>Value of having a clear and quick incident response plan.</li>
+</ul>
+<h2>Action Plan</h2>
+<p>&lt;Detail the specific actions, responsible persons, and deadlines for implementing the preventive measures.&gt;</p>
+<p>Example:</p>
+<ul>
+    <li>Action: Revise testing protocols<br>Responsible: QA Manager<br>Deadline: June 1, 2024</li>
+    <li>Action: Set up real-time alerts<br>Responsible: IT Manager<br>Deadline: May 25, 2024</li>
+    <li>Action: Schedule regular maintenance<br>Responsible: System Administrator<br>Deadline: Ongoing, every 1st of the month</li>
+</ul>
+</body>
+</html>

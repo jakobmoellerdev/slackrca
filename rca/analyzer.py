@@ -1,5 +1,6 @@
 # rca/analyzer.py
 import logging
+import os
 
 import torch
 from huggingface_hub import login
@@ -8,7 +9,13 @@ from transformers.cache_utils import HybridCache
 
 torch.set_float32_matmul_precision('high')
 
-login(token="***REMOVED***")
+
+token = os.getenv("HUGGINGFACE_TOKEN")
+
+if token is None:
+    raise ValueError("HUGGINGFACE_TOKEN not found. Please set the environment variable according to your access.")
+
+login(token=token)
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

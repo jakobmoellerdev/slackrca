@@ -99,13 +99,6 @@ The current model makes use of [torch.compile](https://pytorch.org/tutorials/int
 |       Return PDF to User     |
 |       (FastAPI Application)  |
 +---------------+--------------+
-                ^
-                |
-+---------------+--------------+
-|     HTML Template            |
-|    (Stored Locally)          |
-+---------------+--------------+
-
 ```
 
 ## Disclaimer

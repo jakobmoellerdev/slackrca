@@ -30,6 +30,17 @@ Further examples with more detailed slack threads are expected.
 - [ ] Speed up inferencing via optimized sampling
 - [ ] Optimize Tokenizer (using generic model tokenizer for now)
 - [ ] Once the webhook is integrated, remove the raw output, change to file, and find a pdf storage medium
+- [ ] Implement Containerization for the application, and setup an e2e test guide for an AWS machine with a powerful enough GPU
+
+## Running Locally
+
+You will need either a powerful enough GPU or a lot of time to run the current model for inferencing. This was tested
+on a RTX4090 and a summary generation could still take up to 1 minute. The model is not optimized for speed yet.
+
+Pre-requisites for running the demo case:
+- Tested on Python 3.8+
+- See `requirements.txt` for the required packages
+- A powerful enough GPU with recent bfloat16 precision support
 
 ## Design Details / WIP
 
